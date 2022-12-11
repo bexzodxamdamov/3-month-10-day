@@ -1,0 +1,233 @@
+const pokemons = [
+  {
+    id: 1,
+    num: "001",
+    name: "Bulbasaur",
+    img: "http://www.serebii.net/pokemongo/pokemon/001.png",
+    type: ["Grass", "Poison"],
+    height: "0.71 m",
+    weight: "6.9 kg",
+    candy: "Bulbasaur Candy",
+    candy_count: 25,
+    egg: "2 km",
+    spawn_chance: 0.69,
+    avg_spawns: 69,
+    spawn_time: "20:00",
+    multipliers: [1.58],
+    weaknesses: ["Fire", "Ice", "Flying", "Psychic"],
+    next_evolution: [
+      {
+        num: "002",
+        name: "Ivysaur",
+      },
+      {
+        num: "003",
+        name: "Venusaur",
+      },
+    ],
+  },
+  {
+    id: 2,
+    num: "002",
+    name: "Ivysaur",
+    img: "http://www.serebii.net/pokemongo/pokemon/002.png",
+    type: ["Grass", "Poison"],
+    height: "0.99 m",
+    weight: "13.0 kg",
+    candy: "Bulbasaur Candy",
+    candy_count: 100,
+    egg: "Not in Eggs",
+    spawn_chance: 0.042,
+    avg_spawns: 4.2,
+    spawn_time: "07:00",
+    multipliers: [1.2, 1.6],
+    weaknesses: ["Fire", "Ice", "Flying", "Psychic"],
+    prev_evolution: [
+      {
+        num: "001",
+        name: "Bulbasaur",
+      },
+    ],
+    next_evolution: [
+      {
+        num: "003",
+        name: "Venusaur",
+      },
+    ],
+  },
+  {
+    id: 3,
+    num: "003",
+    name: "Venusaur",
+    img: "http://www.serebii.net/pokemongo/pokemon/003.png",
+    type: ["Grass", "Poison"],
+    height: "2.01 m",
+    weight: "100.0 kg",
+    candy: "Bulbasaur Candy",
+    egg: "Not in Eggs",
+    spawn_chance: 0.017,
+    avg_spawns: 1.7,
+    spawn_time: "11:30",
+    multipliers: null,
+    weaknesses: ["Fire", "Ice", "Flying", "Psychic"],
+    prev_evolution: [
+      {
+        num: "001",
+        name: "Bulbasaur",
+      },
+      {
+        num: "002",
+        name: "Ivysaur",
+      },
+    ],
+  },
+  {
+    id: 4,
+    num: "004",
+    name: "Charmander",
+    img: "http://www.serebii.net/pokemongo/pokemon/004.png",
+    type: ["Fire"],
+    height: "0.61 m",
+    weight: "8.5 kg",
+    candy: "Charmander Candy",
+    candy_count: 25,
+    egg: "2 km",
+    spawn_chance: 0.253,
+    avg_spawns: 25.3,
+    spawn_time: "08:45",
+    multipliers: [1.65],
+    weaknesses: ["Water", "Ground", "Rock"],
+    next_evolution: [
+      {
+        num: "005",
+        name: "Charmeleon",
+      },
+      {
+        num: "006",
+        name: "Charizard",
+      },
+    ],
+  },
+  {
+    id: 5,
+    num: "005",
+    name: "Charmeleon",
+    img: "http://www.serebii.net/pokemongo/pokemon/005.png",
+    type: ["Fire"],
+    height: "1.09 m",
+    weight: "19.0 kg",
+    candy: "Charmander Candy",
+    candy_count: 100,
+    egg: "Not in Eggs",
+    spawn_chance: 0.012,
+    avg_spawns: 1.2,
+    spawn_time: "19:00",
+    multipliers: [1.79],
+    weaknesses: ["Water", "Ground", "Rock"],
+    prev_evolution: [
+      {
+        num: "004",
+        name: "Charmander",
+      },
+    ],
+    next_evolution: [
+      {
+        num: "006",
+        name: "Charizard",
+      },
+    ],
+  },
+];
+
+const pokemonsList = document.querySelector(".pokemons");
+
+for (let i = 0; i < pokemons.length; i++) {
+  const currentPokemons = pokemons[i];
+
+  const {
+    num,
+    name,
+    img,
+    type,
+    height,
+    weight,
+    candy,
+    candy_count,
+    egg,
+    // spawn_chance,
+    // avg_spawns,
+    // spawn_time,
+    // multipliers,
+    // weaknesses,
+    // prev_evolution,
+    // next_evolution
+  } = currentPokemons;
+
+  pokemonsList.innerHTML += `
+  <li>
+  <p>${num}</p>
+   <h3>${name}</h3>
+   <img src = ${img}> </>
+   <p>${type}</p>
+   <p>${height}</p>
+   <p>${weight}</p>
+   <strong>${candy}</strong>
+   <strong>${candy_count}</strong>
+   <strong>${egg}</strong>
+  </li>`;
+}
+
+// const users = [
+//   { name: "abdurahmon teacher", age: 26, phone: "+998901234567", insof: "A++" },
+//   { name: "nurullo teacher", age: 25, phone: "+998997654321", insof: "A++" },
+//   { name: "brat teacher №0001", age: 20, phone: "+998911357901", insof: "E+" },
+// ];
+
+// const usersList = document.querySelector("#list");
+
+// for (let i = 0; i < users.length; i++) {
+//   const currentUsers = users[i];
+
+//   const { name, age, phone } = currentUsers;
+
+//   usersList.innerHTML += `
+//   <li>
+//    <h3>${name}</h3>
+//    <p>${age}</p>
+//    <strong>${phone}</strong>
+//    <h4>${insof}</h4>
+//   </li>`;
+// }
+
+// const usersForm = document.querySelector("#form");
+// const userName = document.querySelector("#name");
+// const age = document.querySelector("#age");
+// const phone = document.querySelector("#phone");
+
+// usersForm.addEventListener("submit", function (evt) {
+//   evt.preventDefault();
+
+//   const nameValue = userName.value;
+//   const ageValue = age.value;
+//   const phoneValue = phone.value;
+
+//   if (nameValue && ageValue && phoneValue) {
+//     const newUser = {
+//       name: nameValue,
+//       age: ageValue,
+//       phone: phoneValue,
+//     };
+//     users.push(newUser);
+//     const { name, age, phone } = newUser;
+
+//     usersList.innerHTML += `<li>
+//     <h3>${name}</h3>
+//     <p>${age}</p>
+//     <strong>${phone}</strong>
+//     <h4>${insof}</h4>
+//    </li>`;
+//     console.log(users);
+//   }
+
+//   evt.target.reset();
+// });
